@@ -8,7 +8,7 @@ Provides repeatable triage checklists, an incident response lifecycle model, and
 
 ## Structure
 
-```
+```text
 .
 ├── checklists/
 │   ├── api-gateway-triage.md           # Step-by-step API gateway fault isolation
@@ -28,4 +28,4 @@ Provides repeatable triage checklists, an incident response lifecycle model, and
 3. **For onboarding:** New support engineers use these checklists to build consistent diagnostic habits.
 
 ---
-*Maintained by Harrison Vance — Technical Support & Operations*
+Maintained by Harrison Vance — Technical Support & Operations
