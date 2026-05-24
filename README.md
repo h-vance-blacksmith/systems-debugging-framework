@@ -28,7 +28,7 @@ External Health Check  →  TLS/SSL Verification  →  Route Resolution
 ```
 
 | Step | Command | What It Reveals |
-|------|---------|-----------------|
+| ------ | --------- | ----------------- |
 | Health check | `curl -I https://<endpoint>` | Upstream reachability & HTTP status |
 | TLS handshake | `openssl s_client -connect <host>:443` | Certificate expiry, SNI mismatch |
 | Latency breakdown | `curl -w "%{time_total}" -o /dev/null -s` | End-to-end response time |
@@ -39,7 +39,7 @@ External Health Check  →  TLS/SSL Verification  →  Route Resolution
 The **USE Method** (Utilization, Saturation, Errors) is a vendor-agnostic systems analysis framework that works on any resource.
 
 | Layer | Utilization | Saturation | Errors |
-|-------|-------------|------------|--------|
+| ------- | ------------- | ------------ | -------- |
 | **CPU** | `top`, `mpstat -P ALL` | `uptime` (load avg), `vmstat` (`r` vs `b`) | `dmesg` (OOM, watchdog) |
 | **Memory** | `free -h` (available) | `vmstat` (`si`/`so` swap activity) | `dmesg` (OOM killer) |
 | **Disk** | `iostat -xz` (`%util`) | `iostat` (`avgqu-sz`, `await`) | `dmesg` (I/O errors), `journalctl` |
@@ -54,7 +54,7 @@ uptime && dmesg | tail && vmstat 1 5 && mpstat -P ALL 1 5 && iostat -xz 1 5 && f
 A step-by-step guide following the OSI model from the network layer up to the application layer.
 
 | OSI Layer | Check | Command |
-|-----------|-------|---------|
+| ----------- | ------- | --------- |
 | Layer 3 (IP) | Reachability | `ping -c 4 <ip>`, `mtr -rw <host>` |
 | Layer 4 (TCP) | Port open | `nc -zv <host> <port>`, `ss -tulpn` |
 | Layer 4 (Firewall) | Rules blocking | `iptables -L -n -v` |
