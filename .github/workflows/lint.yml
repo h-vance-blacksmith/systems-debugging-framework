@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  markdownlint:
+  markdown:
     runs-on: blacksmith-2vcpu-ubuntu-2404
     timeout-minutes: 5
     steps:
@@ -23,12 +23,6 @@ jobs:
         uses: DavidAnson/markdownlint-cli2-action@v23
         with:
           globs: "**/*.md"
-
-  links:
-    runs-on: blacksmith-2vcpu-ubuntu-2404
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v6
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
