@@ -9,17 +9,26 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  markdown:
+  markdownlint:
     runs-on: blacksmith-2vcpu-ubuntu-2404
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v6
-      - name: Set up Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: "22"
       - name: Run Markdownlint
-        run: npx --yes markdownlint-cli2
+        uses: DavidAnson/markdownlint-cli2-action@v23
+        with:
+          globs: "**/*.md"
+
+  links:
+    runs-on: blacksmith-2vcpu-ubuntu-2404
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
