@@ -12,7 +12,7 @@
 
 **The Investigation:** New engineers spent weeks building muscle memory for basic fault isolation. Even experienced engineers would occasionally skip foundational checks and escalate prematurely, only to have the receiving team confirm the issue was a full disk or a closed firewall port.
 
-**The Resolution:** A structured, layered debugging framework organized into repeatable triage checklists. Each checklist targets a specific failure domain, starts at the outermost layer and works inward, and includes concrete CLI commands for every step. Engineers follow the same methodology every time — regardless of seniority.
+**The Resolution:** A structured, layered debugging framework organized into repeatable triage checklists. Each checklist targets a specific failure domain, starts at the outermost layer and works inward, and includes concrete CLI commands for every step. Engineers follow the same methodology every time, regardless of seniority.
 
 ---
 
